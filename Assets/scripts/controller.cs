@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
+using TMPro;
 
 public class scripts : MonoBehaviour
 
@@ -8,11 +9,12 @@ public class scripts : MonoBehaviour
     public int score = 0;
     public bool touchbird = false;
     public bool touchenemy = false;
+    public TextMeshProUGUI textScore;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        UpdateTextScore();
     }
 
     // Update is called once per frame
@@ -36,7 +38,7 @@ public class scripts : MonoBehaviour
         if (other.CompareTag("collectable"))
         {
             score = score + 1;
-
+            UpdateTextScore();
 
             Destroy(other.gameObject);
             Debug.Log("collected!!!");
@@ -67,7 +69,13 @@ public class scripts : MonoBehaviour
             Debug.Log("ganaste");
         }
 
-
+       
 
     }
+
+    void UpdateTextScore()
+    {
+        textScore.text = "Score: " + score;
+    }
+
 }
