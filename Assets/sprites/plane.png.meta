@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 99d7c72bfea225e429de43e17ff05951
+guid: 02a696103a6fc2943944acac6156aa07
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7836449929097918121
-    second: cartrack_0
+      213: -4356013408991749967
+    second: plane (2)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cartrack_0
+      name: plane (2)_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 626
-        height: 417
+        x: 504
+        y: 410
+        width: 910
+        height: 463
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 759cbfb0f465f3390800000000000000
-      internalID: -7836449929097918121
+      spriteID: 1b8553832e45c83c0800000000000000
+      internalID: -4356013408991749967
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      cartrack_0: -7836449929097918121
+      plane (2)_0: -4356013408991749967
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
