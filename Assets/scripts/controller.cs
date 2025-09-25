@@ -6,7 +6,8 @@ public class scripts : MonoBehaviour
 {
     public float speed = 5f;
     public int score = 0;
-    public bool hasbird = false;
+    public bool touchbird = false;
+    public bool touchenemy = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -46,10 +47,26 @@ public class scripts : MonoBehaviour
         if (other.CompareTag("bird"))
         {
        
-            hasbird = true;
+            touchbird = true;
             Debug.Log("has tocado el pajaro, perdiste");
             Destroy(gameObject);
         }
+
+        if (other.CompareTag("enemy"))
+        {
+           
+            touchenemy = true;
+            Debug.Log("has matado al enemigo");
+            Destroy(other.gameObject);
+        }
+
+
+        //condicion de victoria
+        if (score >= 6 && touchenemy && !touchbird) // es un booleana asumimos que haskey es true y poner ! antes de una variable es false
+        {
+            Debug.Log("ganaste");
+        }
+
 
 
     }
