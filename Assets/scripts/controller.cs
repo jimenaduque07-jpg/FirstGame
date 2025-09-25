@@ -6,7 +6,7 @@ public class scripts : MonoBehaviour
 {
     public float speed = 5f;
     public int score = 0;
-
+    public bool hasbird = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -41,6 +41,14 @@ public class scripts : MonoBehaviour
             Debug.Log("collected!!!");
             Debug.Log("score: " + score);
 
+        }
+
+        if (other.CompareTag("bird"))
+        {
+       
+            hasbird = true;
+            Debug.Log("has tocado el pajaro, perdiste");
+            Destroy(gameObject);
         }
 
 
