@@ -10,11 +10,14 @@ public class scripts : MonoBehaviour
     public bool touchbird = false;
     public bool touchenemy = false;
     public TextMeshProUGUI textScore;
+    public TextMeshProUGUI textEnemies;
+    public int enemy = 0;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         UpdateTextScore();
+        UpdateTextEnemies();
     }
 
     // Update is called once per frame
@@ -56,7 +59,9 @@ public class scripts : MonoBehaviour
 
         if (other.CompareTag("enemy"))
         {
-           
+           enemy = enemy + 1;
+            UpdateTextEnemies();
+
             touchenemy = true;
             Debug.Log("has matado al enemigo");
             Destroy(other.gameObject);
@@ -64,7 +69,7 @@ public class scripts : MonoBehaviour
 
 
         //condicion de victoria
-        if (score >= 6 && touchenemy && !touchbird) // es un booleana asumimos que haskey es true y poner ! antes de una variable es false
+        if (score >= 11 && enemy>= 6 && !touchbird) // es un booleana asumimos que haskey es true y poner ! antes de una variable es false
         {
             Debug.Log("ganaste");
         }
@@ -78,4 +83,8 @@ public class scripts : MonoBehaviour
         textScore.text = "Score: " + score;
     }
 
+    void UpdateTextEnemies()
+    {
+        textEnemies.text = "Enemies " + enemy;
+    }
 }
