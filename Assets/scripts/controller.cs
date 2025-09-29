@@ -6,18 +6,24 @@ public class scripts : MonoBehaviour
 
 {
     public float speed = 5f;
-    public int score = 0;
+    public int nube = 0;
     public bool touchbird = false;
     public bool touchenemy = false;
-    public TextMeshProUGUI textScore;
+    public bool touchgolden = false;
+    public TextMeshProUGUI textNube;
     public TextMeshProUGUI textEnemies;
+    public TextMeshProUGUI textGolden;
+    public TextMeshProUGUI textNotifications;
     public int enemy = 0;
+    public int golden = 0;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        UpdateTextScore();
+        UpdateTextNube();
         UpdateTextEnemies();
+        UpdateTextGolden();
+        UpdateTextNotifications();
     }
 
     // Update is called once per frame
@@ -40,19 +46,21 @@ public class scripts : MonoBehaviour
     {
         if (other.CompareTag("collectable"))
         {
-            score = score + 1;
-            UpdateTextScore();
+            nube = nube + 1;
+            UpdateTextNube();
 
             Destroy(other.gameObject);
+            UpdateTextNotifications();
             Debug.Log("collected!!!");
-            Debug.Log("score: " + score);
+            Debug.Log("nube: " + nube);
 
         }
-
+        
         if (other.CompareTag("bird"))
         {
        
             touchbird = true;
+            UpdateTextNotifications();
             Debug.Log("has tocado el pajaro, perdiste");
             Destroy(gameObject);
         }
@@ -63,14 +71,28 @@ public class scripts : MonoBehaviour
             UpdateTextEnemies();
 
             touchenemy = true;
+            UpdateTextNotifications();
             Debug.Log("has matado al enemigo");
             Destroy(other.gameObject);
         }
+        if (other.CompareTag("golden"))
+        {
+            golden = golden + 1;
+            UpdateTextGolden();
+            touchgolden = true;
+            Destroy(other.gameObject);
+            UpdateTextNotifications();
+            Debug.Log("has recolectado el pajaro dorado, bien hecho");
+           
+
+        }
+       
 
 
         //condicion de victoria
-        if (score >= 11 && enemy>= 6 && !touchbird) // es un booleana asumimos que haskey es true y poner ! antes de una variable es false
+        if (nube >= 17 && enemy>= 6 && !touchbird && touchgolden) // es un booleana asumimos que haskey es true y poner ! antes de una variable es false
         {
+            UpdateTextNotifications();
             Debug.Log("ganaste");
         }
 
@@ -78,13 +100,24 @@ public class scripts : MonoBehaviour
 
     }
 
-    void UpdateTextScore()
+    void UpdateTextNube()
     {
-        textScore.text = "Score: " + score;
+        textNube.text = "Nubes: " + nube + "/17";
     }
 
     void UpdateTextEnemies()
     {
-        textEnemies.text = "Enemies " + enemy;
+        textEnemies.text = "Enemies " + enemy + "/4";
     }
+
+    void UpdateTextGolden()
+    {
+        textGolden.text = "Pajaro dorado: " + golden + "/1";
+    }
+
+    void UpdateTextNotifications()
+    {
+        textNotifications.text = "Notificaciones: ";
+    }
+
 }
