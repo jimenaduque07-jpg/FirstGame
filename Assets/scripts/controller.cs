@@ -23,7 +23,7 @@ public class scripts : MonoBehaviour
         UpdateTextNube();
         UpdateTextEnemies();
         UpdateTextGolden();
-        UpdateTextNotifications();
+        UpdateTextNotifications("Recolecta lo que te hace falta");
     }
 
     // Update is called once per frame
@@ -50,7 +50,7 @@ public class scripts : MonoBehaviour
             UpdateTextNube();
 
             Destroy(other.gameObject);
-            UpdateTextNotifications();
+            UpdateTextNotifications("¡Recolectaste una nube!");
             Debug.Log("collected!!!");
             Debug.Log("nube: " + nube);
 
@@ -60,7 +60,7 @@ public class scripts : MonoBehaviour
         {
        
             touchbird = true;
-            UpdateTextNotifications();
+            UpdateTextNotifications("Has ocado el pájaro, perdiste :(");
             Debug.Log("has tocado el pajaro, perdiste");
             Destroy(gameObject);
         }
@@ -71,7 +71,7 @@ public class scripts : MonoBehaviour
             UpdateTextEnemies();
 
             touchenemy = true;
-            UpdateTextNotifications();
+            UpdateTextNotifications("¡Mataste un enemigo! Bien hecho");
             Debug.Log("has matado al enemigo");
             Destroy(other.gameObject);
         }
@@ -81,7 +81,7 @@ public class scripts : MonoBehaviour
             UpdateTextGolden();
             touchgolden = true;
             Destroy(other.gameObject);
-            UpdateTextNotifications();
+            UpdateTextNotifications("¡Recolectaste el pájaro dorado!");
             Debug.Log("has recolectado el pajaro dorado, bien hecho");
            
 
@@ -92,7 +92,7 @@ public class scripts : MonoBehaviour
         //condicion de victoria
         if (nube >= 17 && enemy>= 6 && !touchbird && touchgolden) // es un booleana asumimos que haskey es true y poner ! antes de una variable es false
         {
-            UpdateTextNotifications();
+            UpdateTextNotifications("¡¡Ganaste la partida!!");
             Debug.Log("ganaste");
         }
 
@@ -115,9 +115,9 @@ public class scripts : MonoBehaviour
         textGolden.text = "Pajaro dorado: " + golden + "/1";
     }
 
-    void UpdateTextNotifications()
+    void UpdateTextNotifications(string message)
     {
-        textNotifications.text = "Notificaciones: ";
+        textNotifications.text =  message;
     }
 
 }
