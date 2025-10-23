@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f054ec4f40fbf6443b5f2f8d2b05c871
+guid: 99e94d53bb125684080589b0d52d3078
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4598922129009172606
-    second: Hover 4_0
+      213: 1254642780419389656
+    second: Hover 6_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Hover 4_0
+      name: Hover 6_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 175
-        height: 88
+        width: 90
+        height: 89
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e7066496f47a2df30800000000000000
-      internalID: 4598922129009172606
+      spriteID: 8d8f7ee16f2696110800000000000000
+      internalID: 1254642780419389656
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: bed43f6f988d10b4da0f9261c1651ece
+    spriteID: 68fd647b617fa524cb8ddcaaf2bc9c44
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Hover 4_0: 4598922129009172606
+      Hover 6_0: 1254642780419389656
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
