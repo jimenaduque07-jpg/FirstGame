@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: c23263930d348be4981088922464b367
+guid: 5c783fd407edeea4780e90d2162800fa
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7136915567553478625
-    second: Hover 7_0
+      213: -1188695920070242444
+    second: table_2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Hover 7_0
+      name: table_2_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 93
-        height: 89
+        width: 365
+        height: 75
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 3, y: 1, z: 0, w: 0}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1effafb45ea6b0360800000000000000
-      internalID: 7136915567553478625
+      spriteID: 47fc142db57e08fe0800000000000000
+      internalID: -1188695920070242444
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 7627cdcc66c3c904cac4b12f71036081
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Hover 7_0: 7136915567553478625
+      table_2_0: -1188695920070242444
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

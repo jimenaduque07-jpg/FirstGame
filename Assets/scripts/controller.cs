@@ -1,10 +1,13 @@
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
 using TMPro;
+using UnityEngine.SceneManagement;
+
 
 public class scripts : MonoBehaviour
 
 {
+
     public float speed = 5f;
     public int nube = 0;
     public bool touchbird = false;
@@ -16,6 +19,10 @@ public class scripts : MonoBehaviour
     public TextMeshProUGUI textNotifications;
     public int enemy = 0;
     public int golden = 0;
+
+    public GameObject GameOverPanel;
+    public GameObject VictoryPanel;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -62,7 +69,10 @@ public class scripts : MonoBehaviour
             touchbird = true;
             UpdateTextNotifications("Has ocado el pájaro, perdiste :(");
             Debug.Log("has tocado el pajaro, perdiste");
-            Destroy(gameObject);
+            GameOverOn();
+            Destroy(gameObject, 0.3f);
+
+
         }
 
         if (other.CompareTag("enemy"))
@@ -94,6 +104,7 @@ public class scripts : MonoBehaviour
         {
             UpdateTextNotifications("¡¡Ganaste la partida!!");
             Debug.Log("ganaste");
+            VictoryOn();
         }
 
        
@@ -120,4 +131,33 @@ public class scripts : MonoBehaviour
         textNotifications.text =  message;
     }
 
+    public void GameOverOn()
+    {
+        GameOverPanel.SetActive(true);
+        Time.timeScale = 0f; // pausa el juego
+    }
+
+    public void GameOverOff()
+    {
+        GameOverPanel.SetActive(false);
+        Time.timeScale = 1f; // reanuda el juego
+    }
+
+    public void VictoryOn()
+    {
+        VictoryPanel.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
+    public void VictoryOff()
+    {
+        VictoryPanel.SetActive(false);
+        Time.timeScale = 1f;
+    }
+
+    public void RetryGame()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 }
