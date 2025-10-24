@@ -2,8 +2,23 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class gamebuttons : MonoBehaviour 
+
 {
     public GameObject PausePanel;
+    public GameObject InstructionsPanel;
+    public GameObject SettingsPanel;
+
+
+    public void InstructionsOn()
+    {
+        InstructionsPanel.SetActive(true);
+    }
+
+    public void InstruccionsOff()
+    {
+        InstructionsPanel.SetActive(false);
+    }
+
     public void GoMenu()
     {
         SceneManager.LoadScene(0);
@@ -14,7 +29,16 @@ public class gamebuttons : MonoBehaviour
         Application.Quit();
     }
 
-    
+    public void SettingsOn()
+    {
+        SettingsPanel.SetActive(true);
+    }
+
+    public void SettingsOff()
+    {
+        SettingsPanel.SetActive(false);
+    }
+
 
     private bool isPaused = false;
     public void TogglePause()
