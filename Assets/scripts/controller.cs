@@ -27,6 +27,7 @@ public class scripts : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        Time.timeScale = 1f;
         UpdateTextNube();
         UpdateTextEnemies();
         UpdateTextGolden();
@@ -100,7 +101,7 @@ public class scripts : MonoBehaviour
 
 
         //condicion de victoria
-        if (nube >= 17 && enemy>= 6 && !touchbird && touchgolden) // es un booleana asumimos que haskey es true y poner ! antes de una variable es false
+        if (nube >= 16 && enemy>= 6 && !touchbird && touchgolden) // es un booleana asumimos que haskey es true y poner ! antes de una variable es false
         {
             UpdateTextNotifications("¡¡Ganaste la partida!!");
             Debug.Log("ganaste");
