@@ -114,7 +114,7 @@ public class scripts : MonoBehaviour
 
     void UpdateTextNube()
     {
-        textNube.text = "Nubes: " + nube + "/17";
+        textNube.text = "Nubes: " + nube + "/16";
     }
 
     void UpdateTextEnemies()
